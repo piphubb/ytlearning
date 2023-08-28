@@ -1,7 +1,10 @@
 <?php
 
+use App\Http\Controllers\AboutController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ServiceController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,9 +17,16 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+Route::get('/', [HomeController::class, 'index']);
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/service', ServiceController::class);
+
+Route::get('/about', [AboutController::class, 'index']);
+
+Route::get('/contact', ContactController::class)->name('page.contact');
+
+Route::get('/welcome', function () {
+    return view('/welcome')->name('welcome');
 });
 
 Route::get('/dashboard', function () {

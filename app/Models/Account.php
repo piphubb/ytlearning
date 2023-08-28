@@ -5,12 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Post extends Model
+class Account extends Model
 {
     use HasFactory;
 
-    public function comments()
+    public function user()
     {
-        return $this->hasMany(Comment::class);
+        return $this->belongsTo(User::class);
     }
 }

@@ -2,7 +2,6 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
@@ -17,11 +16,11 @@ class PostSeeder extends Seeder
     {
         DB::table('posts')->insert([
             'title' => 'Create crud application using Laravel 9',
-            'content' => "when an unknown printer took a galley of type and scrambled it to make a type specimen book. "
+            'content' => 'when an unknown printer took a galley of type and scrambled it to make a type specimen book. ',
         ]);
         DB::table('posts')->insert([
             'title' => 'Create crud application using Laravel 9',
-            'content' => "when an unknown printer took a galley of type and scrambled it to make a type specimen book. "
+            'content' => 'when an unknown printer took a galley of type and scrambled it to make a type specimen book. ',
         ]);
     }
 }
