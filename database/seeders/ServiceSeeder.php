@@ -18,31 +18,37 @@ class ServiceSeeder extends Seeder
         DB::table('services')->insert([
            'title'=>'Web Design',
             'icon'=>'fa-podcast',
+            'icon_color'=>'icon-red',
             'description'=>'Lorem ipsum dolor sit amet elit. Velit beatae rem ullam dolore nisi esse quasi sit amet.',
         ]);
         DB::table('services')->insert([
             'title'=>'Web Design',
             'icon'=>'fa-podcast',
+            'icon_color'=>'icon-yellow',
             'description'=>'Lorem ipsum dolor sit amet elit. Velit beatae rem ullam dolore nisi esse quasi sit amet.',
         ]);
         DB::table('services')->insert([
             'title'=>'Web Design',
             'icon'=>'fa-podcast',
+            'icon_color'=>'icon-blue',
             'description'=>'Lorem ipsum dolor sit amet elit. Velit beatae rem ullam dolore nisi esse quasi sit amet.',
         ]);
         DB::table('services')->insert([
             'title'=>'Web Design',
             'icon'=>'fa-podcast',
+            'icon_color'=>'icon-red',
             'description'=>'Lorem ipsum dolor sit amet elit. Velit beatae rem ullam dolore nisi esse quasi sit amet.',
         ]);
         DB::table('services')->insert([
             'title'=>'Web Design',
             'icon'=>'fa-podcast',
+            'icon_color'=>'icon-red',
             'description'=>'Lorem ipsum dolor sit amet elit. Velit beatae rem ullam dolore nisi esse quasi sit amet.',
         ]);
         DB::table('services')->insert([
             'title'=>'Web Design',
             'icon'=>'fa-podcast',
+            'icon_color'=>'icon-red',
             'description'=>'Lorem ipsum dolor sit amet elit. Velit beatae rem ullam dolore nisi esse quasi sit amet.',
         ]);
     }

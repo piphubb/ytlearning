@@ -62,60 +62,17 @@
             <h5 class="title-subhny mb-2">My Services</h5>
             <h3 class="title-w3l"><span>What I </span>Do</h3>
             <div class="grids-area-hny main-cont-wthree-fea row pt-3 mt-5">
-                <div class="col-lg-4 col-md-6 grids-feature">
-                    <div class="area-box">
-                        <div class="area-icon icon-red">
-                            <span class="fa fa-paint-brush"></span>
+                @foreach($services as $service)
+                    <div class="col-lg-4 col-md-6 grids-feature mt-lg-5 mt-4">
+                        <div class="area-box">
+                            <div class="area-icon {{ $service -> icon_color }}">
+                                <span class="fa {{ $service -> icon }}"></span>
+                            </div>
+                            <h4><a href="#feature" class="title-head">{{ $service->title }}</a></h4>
+                            <p>{{ $service->description }}</p>
                         </div>
-                        <h4><a href="#feature" class="title-head">Web Design</a></h4>
-                        <p>Lorem ipsum dolor sit amet elit. Velit beatae rem ullam dolore nisi esse quasi sit amet. </p>
                     </div>
-                </div>
-                <div class="col-lg-4 col-md-6 grids-feature mt-md-0 mt-4">
-                    <div class="area-box">
-                        <div class="area-icon icon-green">
-                            <span class="fa fa-podcast"></span>
-                        </div>
-                        <h4><a href="#feature" class="title-head">Brand Building</a></h4>
-                        <p>Lorem ipsum dolor sit amet elit. Velit beatae rem ullam dolore nisi esse quasi sit amet. </p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 grids-feature mt-lg-0 mt-4">
-                    <div class="area-box">
-                        <div class="area-icon icon-blue">
-                            <span class="fa fa-laptop"></span>
-                        </div>
-                        <h4><a href="#feature" class="title-head">App Dev</a></h4>
-                        <p>Lorem ipsum dolor sit amet elit. Velit beatae rem ullam dolore nisi esse quasi sit amet. </p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 grids-feature mt-5">
-                    <div class="area-box">
-                        <div class="area-icon icon-yellow">
-                            <span class="fa fa-paint-brush"></span>
-                        </div>
-                        <h4><a href="#feature" class="title-head">Clean Code</a></h4>
-                        <p>Lorem ipsum dolor sit amet elit. Velit beatae rem ullam dolore nisi esse quasi sit amet. </p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 grids-feature mt-5">
-                    <div class="area-box">
-                        <div class="area-icon icon-purple">
-                            <span class="fa fa-podcast"></span>
-                        </div>
-                        <h4><a href="#feature" class="title-head">Mobile apps</a></h4>
-                        <p>Lorem ipsum dolor sit amet elit. Velit beatae rem ullam dolore nisi esse quasi sit amet. </p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 grids-feature mt-5">
-                    <div class="area-box">
-                        <div class="area-icon icon-orange">
-                            <span class="fa fa-laptop"></span>
-                        </div>
-                        <h4><a href="#feature" class="title-head">Retina Ready</a></h4>
-                        <p>Lorem ipsum dolor sit amet elit. Velit beatae rem ullam dolore nisi esse quasi sit amet. </p>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </section>
