@@ -33,6 +33,12 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+//services
+Route::get('services/index', [ServiceController::class, 'list'])->name('backend.service')->middleware('auth');
+Route::get('services/create', [ServiceController::class, 'create'])->name('services.create')->middleware('auth');
+Route::post('services/store', [ServiceController::class, 'store'])->name('services.store')->middleware('auth');
+
+
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
