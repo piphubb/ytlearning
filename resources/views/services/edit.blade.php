@@ -13,27 +13,28 @@
                             <h1 class="font-serif text-3xl font-bold">Create Post</h1>
                         </div>
                         <div class="w-full rounded bg-white px-8 py-8 shadow-md ring-1 ring-gray-900/10 m-5">
-                            <form method="POST" action="{{ route('services.store') }}">
+                            <form method="POST" action="{{ route('services.update',$services->id) }}">
                                 @csrf
+                                @method('PUT')
                                 <!-- Title -->
                                 <div>
                                     <label class="block text-sm font-medium text-gray-700" for="title"> Title </label>
-                                    <input class="block w-full mt-1 border-gray-300 rounded-md shadow-sm placeholder:text-gray-400 placeholder:text-right focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" type="text" name="title" placeholder="">
+                                    <input required value="{{ $services->title }}" class="block w-full mt-1 border-gray-300 rounded-md shadow-sm placeholder:text-gray-400 placeholder:text-right focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" type="text" name="title" placeholder="">
                                 </div>
                                 <div>
                                     <label class="block text-sm font-medium text-gray-700" for="icon"> Icon </label>
-                                    <input class="block w-full mt-1 border-gray-300 rounded-md shadow-sm placeholder:text-gray-400 placeholder:text-right focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" type="text" name="icon" placeholder="180">
+                                    <input value="{{ $services->icon }}" class="block w-full mt-1 border-gray-300 rounded-md shadow-sm placeholder:text-gray-400 placeholder:text-right focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" type="text" name="icon" placeholder="180">
                                 </div>
                                 <div>
                                     <label class="block text-sm font-medium text-gray-700" for="description"> Description </label>
-                                    <input class="block w-full mt-1 border-gray-300 rounded-md shadow-sm placeholder:text-gray-400 placeholder:text-right focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" type="text" name="description" placeholder="180">
+                                    <input value="{{ $services->description }}" class="block w-full mt-1 border-gray-300 rounded-md shadow-sm placeholder:text-gray-400 placeholder:text-right focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" type="text" name="description" placeholder="180">
                                 </div>
                                 <div>
                                     <label class="block text-sm font-medium text-gray-700" for="icon_color"> Icon Color </label>
-                                    <input class="block w-full mt-1 border-gray-300 rounded-md shadow-sm placeholder:text-gray-400 placeholder:text-right focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" type="text" name="icon_color" placeholder="180">
+                                    <input value="{{ $services->icon_color }}" class="block w-full mt-1 border-gray-300 rounded-md shadow-sm placeholder:text-gray-400 placeholder:text-right focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" type="text" name="icon_color" placeholder="180">
                                 </div>
                                 <div class="mt-4 flex items-center justify-start">
-                                    <button type="submit" class="inline-flex items-center rounded-md bg-sky-500 px-6 py-2 text-sm font-semibold text-sky-100 ring-gray-300 hover:bg-sky-700 focus:border-gray-900 focus:outline-none focus:ring">Save</button>
+                                    <button type="submit" class="inline-flex items-center rounded-md bg-sky-500 px-6 py-2 text-sm font-semibold text-sky-100 ring-gray-300 hover:bg-sky-700 focus:border-gray-900 focus:outline-none focus:ring">Update</button>
                                 </div>
                             </form>
                         </div>

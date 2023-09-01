@@ -17,6 +17,8 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
+//frontend
 Route::get('/', [HomeController::class, 'index']);
 
 Route::get('/service', ServiceController::class);
@@ -34,11 +36,17 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 //services
-Route::get('services/index', [ServiceController::class, 'list'])->name('backend.service')->middleware('auth');
-Route::get('services/create', [ServiceController::class, 'create'])->name('services.create')->middleware('auth');
-Route::post('services/store', [ServiceController::class, 'store'])->name('services.store')->middleware('auth');
+//Route::get('services/index', [ServiceController::class, 'index'])->name('services.index')->middleware('auth');
+//Route::get('services/create', [ServiceController::class, 'create'])->name('services.create')->middleware('auth');
+//Route::post('services/store', [ServiceController::class, 'store'])->name('services.store')->middleware('auth');
+//Route::get('services/{id}/edit', [ServiceController::class, 'edit'])->name('services.edit')->middleware('auth');
+//Route::put('services/{update}', [ServiceController::class, 'update'])->name('services.update')->middleware('auth');
+//Route::delete('services/{destroy}', [ServiceController::class, 'destroy'])->name('services.destroy')->middleware('auth');
 
+//backend
+Route::resource(name: 'services',controller: ServiceController::class)->middleware('auth');
 
+//auth
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
